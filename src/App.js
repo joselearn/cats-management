@@ -13,10 +13,14 @@ import Navbar from "./components/navbar";
 import NotFound from "./components/notFound";
 import CatForm from "./components/catForm";
 
+
+import './App.css';
+
 const App = () => {
   return (
     <ReduxProvider store={store}>
       <PersistGate loading={null} persistor={persistor}>
+      <div className="img-background">
         <BrowserRouter>
           <ToastContainer />
           <Navbar />
@@ -31,6 +35,7 @@ const App = () => {
             </Switch>
           </main>
         </BrowserRouter>
+        </div>
       </PersistGate>
     </ReduxProvider>
   );

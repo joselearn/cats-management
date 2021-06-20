@@ -57,7 +57,7 @@ class Cats extends Component {
     const { pageSize, currentPage, sortColumn, searchQuery } = this.state;
     const { length: count } = this.props.cats;
 
-    if (count === 0) return <p>There are no cats in the "database".</p>;
+    if (count === 0) return <p>There are no cats in the "Pokédex".</p>;
 
     const { totalCount, data: cats } = this.getPagedData();
 
@@ -67,7 +67,7 @@ class Cats extends Component {
           <Link to="cat/new" className="btn btn-primary btn-small" style={{ marginBottom: 20 }}>
             New Cat
           </Link>
-          <p>Showing {totalCount} cats in the database.</p>
+          <p>Showing {totalCount} cats in the Pokédex.</p>
           <SearchBox value={searchQuery} onChange={this.handleSearch} />
           <CatsTable cats={cats} sortColumn={sortColumn} onLike={this.handleLike} onDelete={this.handleDelete} onSort={this.handleSort} />
           <Pagination itemsCount={totalCount} pageSize={pageSize} currentPage={currentPage} onPageChange={this.handlePageChange} />
